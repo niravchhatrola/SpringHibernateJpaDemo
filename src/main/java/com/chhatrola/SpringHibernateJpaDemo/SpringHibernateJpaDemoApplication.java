@@ -1,6 +1,7 @@
 package com.chhatrola.SpringHibernateJpaDemo;
 
 import com.chhatrola.SpringHibernateJpaDemo.controller.PersonController;
+import com.chhatrola.SpringHibernateJpaDemo.controller.StudentController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,9 @@ public class SpringHibernateJpaDemoApplication {
 	@Autowired
 	PersonController personController;
 
+	@Autowired
+	StudentController studentController;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringHibernateJpaDemoApplication.class, args);
 	}
@@ -21,6 +25,7 @@ public class SpringHibernateJpaDemoApplication {
 	@Bean
 	public String test(){
 		personController.personOps();
+		studentController.studentOps();
 		return "";
 	}
 
