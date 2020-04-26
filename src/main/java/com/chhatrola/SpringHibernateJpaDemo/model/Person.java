@@ -1,9 +1,6 @@
 package com.chhatrola.SpringHibernateJpaDemo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -11,7 +8,11 @@ import java.util.Date;
  */
 
 @Entity
-@NamedQuery(name = "find_all_person", query = "select p from Person p")
+@NamedQueries(value = {
+        @NamedQuery(name = "find_all_person", query = "select p from Person p"),
+        @NamedQuery(name = "find_all_punekar", query = "select p from Person p where p.location= ?1"),
+        @NamedQuery(name = "find_per_loc", query = "select p from Person p where location= :loc")
+})
 public class Person {
 
     public Person() {

@@ -62,6 +62,39 @@ public class PersonService {
 
         System.out.println("------------------------------------------------");
 
+        System.out.println("---------------------Play with Entity Manager---------------------------");
+
+        personRepository.playWithEm();
+
+        System.out.println("------------------------------------------------");
+
+        System.out.println("---------------------Named Query : find all punekar---------------------------");
+
+        List<Person> allPunekars = personRepository.findAllPunekars();
+        allPunekars.forEach(System.out::println);
+
+        System.out.println("------------------------------------------------");
+
+        System.out.println("---------------------Named Query : find per location---------------------------");
+
+        List<Person> locs = personRepository.findPerLocation("Morbi");
+        locs.forEach(System.out::println);
+
+        System.out.println("------------------------------------------------");
+
+        System.out.println("---------------------Native Query : find By Name---------------------------");
+
+        List<Person> nativeQuery1 = personRepository.findByNativeQuery();
+        nativeQuery1.forEach(System.out::println);
+
+        System.out.println("------------------------------------------------");
+
+        System.out.println("---------------------Native Query : find By Name with attribute---------------------------");
+
+        List<Person> nativeQuery2 = personRepository.findByNativeQueryByAttribute("Papa");
+        nativeQuery2.forEach(System.out::println);
+
+        System.out.println("------------------------------------------------");
 
     }
 
