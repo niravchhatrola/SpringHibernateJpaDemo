@@ -1,5 +1,6 @@
 package com.chhatrola.SpringHibernateJpaDemo;
 
+import com.chhatrola.SpringHibernateJpaDemo.controller.CourseController;
 import com.chhatrola.SpringHibernateJpaDemo.controller.PersonController;
 import com.chhatrola.SpringHibernateJpaDemo.controller.StudentController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class SpringHibernateJpaDemoApplication {
 	@Autowired
 	StudentController studentController;
 
+	@Autowired
+	CourseController courseController;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringHibernateJpaDemoApplication.class, args);
 	}
@@ -26,6 +30,7 @@ public class SpringHibernateJpaDemoApplication {
 	public String test(){
 		personController.personOps();
 		studentController.studentOps();
+		courseController.courseOps();
 		return "";
 	}
 
