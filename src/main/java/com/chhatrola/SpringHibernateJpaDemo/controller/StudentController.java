@@ -15,5 +15,6 @@ public class StudentController {
 
     public void studentOps(){
         studentService.doStudentDbOps();
+        studentService.doManyToManyDbOps();
     }
 }
