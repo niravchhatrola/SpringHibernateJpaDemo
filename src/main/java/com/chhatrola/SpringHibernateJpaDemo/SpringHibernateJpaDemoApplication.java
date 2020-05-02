@@ -1,14 +1,10 @@
 package com.chhatrola.SpringHibernateJpaDemo;
 
-import com.chhatrola.SpringHibernateJpaDemo.controller.CourseController;
-import com.chhatrola.SpringHibernateJpaDemo.controller.PersonController;
-import com.chhatrola.SpringHibernateJpaDemo.controller.StudentController;
+import com.chhatrola.SpringHibernateJpaDemo.controller.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 public class SpringHibernateJpaDemoApplication {
@@ -22,6 +18,13 @@ public class SpringHibernateJpaDemoApplication {
 	@Autowired
 	CourseController courseController;
 
+
+	@Autowired
+	NamedQuriesController namedQuriesController;
+
+	@Autowired
+	StudentSpringDataJpaController studentSpringDataJpaController;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringHibernateJpaDemoApplication.class, args);
 	}
@@ -31,6 +34,8 @@ public class SpringHibernateJpaDemoApplication {
 		personController.personOps();
 		studentController.studentOps();
 		courseController.courseOps();
+		namedQuriesController.doNamedQueryOps();
+		studentSpringDataJpaController.doSpringDataJpaOps();
 		return "";
 	}
 
